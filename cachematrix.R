@@ -9,10 +9,15 @@
 
 makeCacheMatrix <- function(x = matrix()) {
         inv <- NULL
+          # set is a function that changes the vector stored in the main function.makemls
+        
         set <- function(y) {
+          # `<<-` is used to assign a value to an object in an environment 
+          # different from the current environment. 
                 x <<- y
                 inv <<- NULL
         }
+          # get is a function that returns the vector x stored in the main function
         get <- function() x
         setInverse <- function(inverse) inv <<- inverse
         getInverse <- function() inv
